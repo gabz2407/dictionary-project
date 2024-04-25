@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useState } from "react";
 
 import Results from "./Results";
+import Synonyms from "./Synonyms";
+
 import "./Dictionary.css";
 
 export default function Dictionary() {
@@ -16,7 +18,6 @@ export default function Dictionary() {
     event.preventDefault();
 
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${inputValue}`;
-    console.log(apiUrl);
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -34,6 +35,9 @@ export default function Dictionary() {
         </form>
       </header>
       <Results results={result} />
+      <div>
+        <Synonyms synonyms={result.meanings[0].synonyms} />
+      </div>
     </div>
   );
 }
