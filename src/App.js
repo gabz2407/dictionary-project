@@ -8,6 +8,14 @@ export default function App() {
       <div className="container">
         <Dictionary />
       </div>
+      <footer>
+        This project was coded by{" "}
+        <a href="https://www.linkedin.com/in/gabriela-agostinho-378b67207/">
+          Gabriela Agostinho
+        </a>{" "}
+        and it is open-sourced on{" "}
+        <a href="https://github.com/gabz2407">GitHub</a>.
+      </footer>
     </div>
   );
 }
