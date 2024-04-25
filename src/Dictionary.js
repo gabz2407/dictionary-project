@@ -34,7 +34,9 @@ export default function Dictionary() {
           <input type="search" placeholder="Search" onChange={handleSearch} />
         </form>
       </header>
-      <Results results={result} />
+      <div>
+        <Results results={result} />
+      </div>
       <div>
         <Synonyms synonyms={result.meanings[0].synonyms} />
       </div>
