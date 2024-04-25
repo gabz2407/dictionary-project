@@ -11,7 +11,9 @@ export default function Results(props) {
         {props.results.meanings.map(function (meaning, index) {
           return (
             <div key={index}>
-              <Definition meaning={meaning} />
+              <div>
+                <Definition meaning={meaning} />
+              </div>
             </div>
           );
         })}
