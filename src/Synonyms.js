@@ -10,7 +10,7 @@ export default function Synonyms(props) {
         <ul className="row mb-0">
           {props.synonyms.map(function (synonym, index) {
             return (
-              <li className="col-4 col-md-3  text-capitalize" key={index}>
+              <li className="col-4 col-md-3 text-capitalize" key={index}>
                 {synonym}
               </li>
             );
