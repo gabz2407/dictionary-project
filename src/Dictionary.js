@@ -62,7 +62,7 @@ export default function Dictionary(props) {
             />
           </form>
           <div className="hint">
-            Suggestion: flowers, yoga, party, forest, sunset...
+            Suggestion: nature, yoga, party, forest, sunset...
           </div>
         </header>
         <Results results={result} />
