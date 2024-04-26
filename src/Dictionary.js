@@ -7,9 +7,15 @@ import Synonyms from "./Synonyms";
 import "./Dictionary.css";
 
 export default function Dictionary(props) {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState(props.default);
   const [result, setResult] = useState("");
   const [synonyms, setSynonyms] = useState([]);
+  const [loaded, setLoaded] = useState(false);
+
+  function search() {
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${inputValue}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
 
   function handleResponse(response) {
     let result = response.data[0];
@@ -17,35 +23,49 @@ export default function Dictionary(props) {
     setSynonyms(result.meanings[0].synonyms);
   }
 
-  function search(event) {
+  function handleSearch(event) {
     event.preventDefault();
-
-    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${inputValue}`;
-    axios.get(apiUrl).then(handleResponse);
+    search();
   }
 
-  function handleSearch(input) {
+  function handleInputValue(input) {
     setInputValue(input.target.value);
   }
 
-  return (
-    <div className="Dictionary">
-      <header>
-        <h1 className="fs-2 pt-2">Dictionary</h1>
-        <h3 className="fs-5 ">What word would you like to know more about?</h3>
-        <form onSubmit={search}>
-          <input type="search" placeholder="Search" onChange={handleSearch} />
-        </form>
-        <div className="hint">
-          Suggestion: flowers, yoga, party, forest, sunset...
+  function load() {
+    setLoaded(true);
+    search();
+  }
+
+  if (loaded) {
+    return (
+      <div className="Dictionary">
+        <header>
+          <h1 className="fs-2 pt-2">Dictionary</h1>
+          <h3 className="fs-5 ">
+            What word would you like to know more about?
+          </h3>
+          <form onSubmit={handleSearch}>
+            <input
+              type="search"
+              placeholder="Search"
+              onChange={handleInputValue}
+            />
+          </form>
+          <div className="hint">
+            Suggestion: flowers, yoga, party, forest, sunset...
+          </div>
+        </header>
+        <div>
+          <Results results={result} />
         </div>
-      </header>
-      <div>
-        <Results results={result} />
+        <div>
+          <Synonyms synonyms={synonyms} />
+        </div>
       </div>
-      <div>
-        <Synonyms synonyms={synonyms} />
-      </div>
-    </div>
-  );
+    );
+  } else {
+    load();
+    return "Loading";
+  }
 }
