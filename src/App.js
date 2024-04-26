@@ -6,7 +6,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <Dictionary default="meaning" />
+        <Dictionary default="cactus" />
       </div>
       <footer>
         This project was coded by{" "}
