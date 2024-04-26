@@ -17,6 +17,8 @@ export default function Definition(props) {
               </p>
             </div>
           );
+        } else {
+          return null;
         }
       })}
     </div>
