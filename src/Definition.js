@@ -5,14 +5,17 @@ export default function Definition(props) {
     <div className="Definition">
       <h4>{props.meaning.partOfSpeech}</h4>
       {props.meaning.definitions.map(function (eachDefinition, index) {
-        return (
-          <div key={index}>
-            <p>{eachDefinition.definition}</p>
-            <p>
-              <em>{eachDefinition.example}</em>
-            </p>
-          </div>
-        );
+        if ((eachDefinition.example, eachDefinition.definition)) {
+          return (
+            <div key={index}>
+              <strong>Definition:</strong>
+              <p>{eachDefinition.definition}</p>
+              <p>
+                <em>{eachDefinition.example}</em>
+              </p>
+            </div>
+          );
+        }
       })}
     </div>
   );
