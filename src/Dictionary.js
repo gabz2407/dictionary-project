@@ -9,9 +9,12 @@ import "./Dictionary.css";
 export default function Dictionary() {
   const [inputValue, setInputValue] = useState("");
   const [result, setResult] = useState("");
+  const [synonyms, setSynonyms] = useState([]);
 
   function handleResponse(response) {
-    setResult(response.data[0]);
+    let result = response.data[0];
+    setResult(result);
+    setSynonyms(result.meanings[0].synonyms);
   }
 
   function search(event) {
@@ -24,7 +27,7 @@ export default function Dictionary() {
   function handleSearch(input) {
     setInputValue(input.target.value);
   }
-
+  console.log(result);
   return (
     <div className="Dictionary">
       <header>
@@ -38,7 +41,7 @@ export default function Dictionary() {
         <Results results={result} />
       </div>
       <div>
-        <Synonyms synonyms={result.meanings[0].synonyms} />
+        <Synonyms synonyms={synonyms} />
       </div>
     </div>
   );
