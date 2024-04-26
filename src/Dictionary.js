@@ -6,7 +6,7 @@ import Synonyms from "./Synonyms";
 
 import "./Dictionary.css";
 
-export default function Dictionary() {
+export default function Dictionary(props) {
   const [inputValue, setInputValue] = useState("");
   const [result, setResult] = useState("");
   const [synonyms, setSynonyms] = useState([]);
@@ -27,15 +27,18 @@ export default function Dictionary() {
   function handleSearch(input) {
     setInputValue(input.target.value);
   }
-  console.log(result);
+
   return (
     <div className="Dictionary">
       <header>
-        <h1>Dictionary</h1>
-        <h3>What word would you like to know more about?</h3>
+        <h1 className="fs-2 pt-2">Dictionary</h1>
+        <h3 className="fs-5 ">What word would you like to know more about?</h3>
         <form onSubmit={search}>
           <input type="search" placeholder="Search" onChange={handleSearch} />
         </form>
+        <div className="hint">
+          Suggestion: flowers, yoga, party, forest, sunset...
+        </div>
       </header>
       <div>
         <Results results={result} />
