@@ -1,0 +1,21 @@
+.App footer {
+  text-align: center;
+  color: rgba(108, 108, 109, 0.759);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.App footer a {
+  color: black;
+  text-decoration: none;
+}
+
+.App footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 575px) {
+  .App footer {
+    font-size: 12px;
+  }
+}

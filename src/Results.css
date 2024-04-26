@@ -1,3 +1,8 @@
 .Results h2 {
-  font-size: 48px;
+  font-size: 46px;
+}
+
+.Results .Definition .example {
+  color: rgb(148, 148, 149);
+  font-size: 15px;
 }

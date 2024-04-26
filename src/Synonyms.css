@@ -1,0 +1,21 @@
+.Synonyms {
+  background-color: rgba(176, 175, 177, 0.678);
+  margin: 35px 18% 40px 18%;
+}
+
+.Synonyms ul {
+  padding-left: 20px;
+  width: 100%;
+}
+
+.Synonyms li {
+  list-style: none;
+  padding: 3px 3px 7px 0;
+  color: rgb(108, 108, 109);
+}
+
+@media (max-width: 992px) {
+  .Synonyms {
+    margin: 35px 5% 25px 5%;
+  }
+}

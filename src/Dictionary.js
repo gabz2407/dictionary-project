@@ -42,7 +42,7 @@ export default function Dictionary(props) {
       <div className="Dictionary">
         <header>
           <h1 className="fs-2 pt-2">Dictionary</h1>
-          <h3 className="fs-5 ">
+          <h3 className="subtitle">
             What word would you like to know more about?
           </h3>
           <form onSubmit={handleSearch}>
