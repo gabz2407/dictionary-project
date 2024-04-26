@@ -1,6 +1,6 @@
 .Synonyms {
   background-color: rgba(176, 175, 177, 0.678);
-  margin: 35px 18% 40px 18%;
+  margin: 35px 15% 40px 15%;
 }
 
 .Synonyms ul {
@@ -9,8 +9,9 @@
 }
 
 .Synonyms li {
-  list-style: none;
-  padding: 3px 3px 7px 0;
+  list-style-position: inside;
+  list-style-type: "✦ ";
+  padding: 3px 3px 7px;
   color: rgb(108, 108, 109);
 }
 

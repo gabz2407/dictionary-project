@@ -5,12 +5,15 @@ import "./Synonyms.css";
 export default function Synonyms(props) {
   if (props.synonyms[0]) {
     return (
-      <div className="Synonyms">
+      <div className="Synonyms mb-4">
         <h3 className="p-2 fw-semibold">Synonyms</h3>
-        <ul className="row ">
+        <ul className="row mb-0">
           {props.synonyms.map(function (synonym, index) {
             return (
-              <li className="col-3 col-lg-2 text-capitalize" key={index}>
+              <li
+                className="col-sm-3 col-4 fs-sm-2 text-capitalize"
+                key={index}
+              >
                 {synonym}
               </li>
             );
