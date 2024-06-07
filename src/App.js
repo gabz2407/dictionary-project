@@ -10,7 +10,7 @@ export default function App() {
       </div>
       <footer>
         This project was coded by{" "}
-        <a href="https://www.linkedin.com/in/gabriela-agostinho-378b67207/">
+        <a href="https://www.linkedin.com/in/gabriela-agostinho24/">
           Gabriela Agostinho
         </a>{" "}
         and it is open-sourced on{" "}
